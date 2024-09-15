@@ -4,9 +4,6 @@ This repository contains various cryptographic exercises demonstrating symmetric
 
 ## Directory Structure
 ```markdown
-
-
-```plaintext
 _CODE/
   Asymmetric Exercise 1/
     data.txt
