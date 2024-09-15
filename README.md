@@ -36,7 +36,7 @@ _CODE/
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/Cryptography.git
-   cd cryptography-exercises
+   cd Cryptography
    ```
 
 2. Install the required dependencies:
