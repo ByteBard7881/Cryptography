@@ -35,7 +35,7 @@ _CODE/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Cryptography.git
+   git clone https://github.com/ByteBard7881/Cryptography.git
    cd Cryptography
    ```
 
