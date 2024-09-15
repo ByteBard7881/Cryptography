@@ -1,11 +1,10 @@
-Here's a GitHub `README.md` for your cryptography project:
-
-```markdown
 # Cryptography Exercises
 
 This repository contains various cryptographic exercises demonstrating symmetric encryption with the Fernet algorithm and asymmetric encryption/signing using Rivest-Shamir-Adleman(RSA) algorithm.
 
 ## Directory Structure
+```markdown
+
 
 ```plaintext
 _CODE/
