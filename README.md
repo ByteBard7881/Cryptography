@@ -53,7 +53,7 @@ _CODE/
    python symmetric.py
    ```
    
-   This script will generate a key, encrypt a message, save the key in `key.txt`, and print the original, encrypted, and decrypted messages.
+   This script will encrypt a message, and print the original, encrypted, decrypted messages, nonce and tag.
 
 #### Asymmetric Encryption (Exercise 1)
 

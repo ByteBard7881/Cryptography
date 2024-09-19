@@ -1,18 +1,23 @@
-from cryptography.fernet import Fernet
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
 
-original_message = "akusdybskdeuybeskuydgbskuazdhb"
-print(original_message)
+def encrypt_AES(key, data):
+    cipher = AES.new(key, AES.MODE_EAX)
+    cipher_text, tag = cipher.encrypt_and_digest(data)
+    nonce = cipher.nonce
+    return cipher_text, tag, nonce
 
-# Generating Fernet Key
-key = Fernet.generate_key()
+def decrypt_AES(key, nonce, cipher_text, tag):
+    cipher = AES.new(key, AES.MODE_EAX, nonce)
+    data =  cipher.decrypt_and_verify(cipher_text, tag)
+    return data
 
-with open('./key.txt', 'wb') as file:
-    file.write(key)
+data = b'secret data'
+key = get_random_bytes(32)
 
-fnt = Fernet(key)
+print(f"Key: {key}")
+cipher_text, tag, nonce = encrypt_AES(key, data)
+print(f"Cipher text: {cipher_text}\n" + f"Tag: {tag}\n" + f"Nonce: {nonce}")
 
-encrypted_message = fnt.encrypt(original_message.encode())
-print(encrypted_message)
-
-decrypted_message = fnt.decrypt(encrypted_message.decode())
-print(decrypted_message)
+data = decrypt_AES(key, nonce, cipher_text, tag)
+print(f"Data: {data}")
